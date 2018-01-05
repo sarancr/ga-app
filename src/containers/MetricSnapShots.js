@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { dashBoardAction } from '../actions/index'
 import MetricSnapShot from '../components/MetricSnapShot'
+import { Link } from 'react-router-dom';
 
 class MetricSnapShots extends Component {
 
@@ -12,29 +13,35 @@ class MetricSnapShots extends Component {
     }
 
     render() {
-               if(!this.props.pupd || this.props.pupd === null )
-                    <div>Please wait,loading...</div>
+        if(!this.props.pupd || this.props.pupd === null)
+            return <div>Please wait, loading...</div>;
+
         return (
             <div>
-                <MetricSnapShot
-                    metrics={this.props.pupd}
-                    field="netWinPUPD"
-                    label = "NETWIN PUPD"
-                />
-                <MetricSnapShot
-                    metrics={this.props.pupd}
-                    field="coinInPUPD"
-                    label = "COININ PUPD"
-                    
+                <Link to={{ pathname: '/drilldown/netWin' }}>
+                    <MetricSnapShot
+                        metrics={this.props.pupd}
+                        field="netWinPUPD"
+                        label = "NETWIN PUPD"
+                    />
+                </Link>
 
-                />
-                <MetricSnapShot
-                    metrics={this.props.pupd}
-                    field="handlePullsPUPD"
-                    label = "HANDLEPULLS PUPD"
-                    
-                />
-               
+                <Link to={{ pathname: '/drilldown/coinIn' }}>
+                    <MetricSnapShot
+                        metrics={this.props.pupd}
+                        field="coinInPUPD"
+                        label = "COININ PUPD"
+                    />
+                </Link>
+
+                <Link to={{ pathname: '/drilldown/handlePulls' }}>
+                    <MetricSnapShot
+                        metrics={this.props.pupd}
+                        field="handlePullsPUPD"
+                        label = "HANDLEPULLS PUPD"
+                    />
+               </Link>
+
             </div>
 
         );
