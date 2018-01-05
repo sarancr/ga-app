@@ -12,6 +12,8 @@ class MetricSnapShots extends Component {
     }
 
     render() {
+               if(!this.props.pupd || this.props.pupd === null )
+                    <div>Please wait,loading...</div>
         return (
             <div>
                 <MetricSnapShot
