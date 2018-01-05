@@ -66,21 +66,10 @@ export default class TabularData extends Component {
             <div> 
                 <ReactTable
                 data={this.props.data}
-                columns={columns} />
+                columns={columns} 
+                defaultPageSize={10}
+                className="-striped -highlight"/>
             </div>
-
         );
-
-
-
-
     }
-
-
-
-
-
-
-
-
 }
