@@ -1,9 +1,10 @@
-import  {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers ({
+import metricSnapShotReducer from './MetricSnapShotsReducer';
 
-
-})
+const rootReducer = combineReducers({
+    metrics: metricSnapShotReducer
+});
 
 export default rootReducer;
 
