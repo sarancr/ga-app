@@ -4,12 +4,16 @@ import DrillDownGraph from '../components/DrillDownGraph';
 
 class DrillDownView extends Component {
     render() {
-        if (!this.props.aggr || this.props.aggr === null)
+        const field = this.props.match ? this.props.match.params.field : null;
+        console.log(field);
+
+        if (field === null || !this.props.aggr || this.props.aggr === null)
             return <div></div>
         return (
-            <div>
+            <div className = "content">
+                <div className="page-title">DrillDown View</div>
                 <DrillDownGraph value={this.props.aggr}
-                    field="netWin" />
+                    field= { field } />
             </div>
         );
     }

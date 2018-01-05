@@ -1,0 +1,14 @@
+.header{
+    line-height: 50px;
+    background-color:#4267b2;
+    height:50px; 
+    color:#FFF;
+    padding:10px;
+    margin-bottom:30px;
+}
+
+.logo {
+    font-weight:bold;
+    font-size:32px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
